@@ -12,7 +12,7 @@ permissions:
   group: 
 hooks:
   BeforeInstall:
-      - location: Scripts/BeforeInstall.sh
+      - location: scripts/BeforeInstall.sh
       timeout: 120
       runas: 
   AfterInstall:
