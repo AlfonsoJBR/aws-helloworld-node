@@ -1,31 +1,24 @@
 version: 0.0
-os: 
+os: linux
 files:
-  # unzip en ~/app/release
   - source: /
-    destination: 
-permissions:
-  # Cambia los permiso de root a ubuntu
-  - object:   
-    pattern: "**"
-  owner: 
-  group: 
+    destination: /home/ubuntu/app/
+    overwrite: true
+file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
-      - location: scripts/BeforeInstall.sh
-      timeout: 120
-      runas: 
+    - location: scripts/BeforeInstall.sh
+      timeout: 300
+      runas: root
   AfterInstall:
-      - location: 
-      timeout: 
-      runas: 
+    - location: scripts/AfterInstall.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-    # Inicia la aplicación com ubuntu
     - location: 
-      timeout: 
-      runas: 
+      timeout: 300
+      runas: root
   ApplicationStop:
-  # Para la aplicación
     - location: 
-      timeout: 
-      runas: 
+      timeout: 300
+      runas: root
