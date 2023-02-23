@@ -20,6 +20,5 @@ jobs:
         aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
         aws-region: us-east-1
 
-    # - name: codedeploy
-    #   run:
-    #     aws deploy create-deployment --application-name node-helloworld --deployment-group-name users production --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+    - name: codedeploy
+      run: aws deploy create-deployment --application-name amazonygithub --deployment-group-name grupoamazonygithub --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
