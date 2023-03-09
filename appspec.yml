@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/app/
+    destination: /home/ubuntu/app/release
     overwrite: true
 file_exists_behavior: OVERWRITE
 hooks:
@@ -15,10 +15,7 @@ hooks:
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: 
+    - location: scripts/start_server.sh
       timeout: 300
       runas: root
-  ApplicationStop:
-    - location: 
-      timeout: 300
-      runas: root
+
